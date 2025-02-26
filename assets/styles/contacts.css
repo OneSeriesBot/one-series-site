@@ -1,0 +1,181 @@
+.contacts-content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.contacts-content h1 {
+    color: var(--blu_scuro);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.contacts-description {
+    color: var(--grigio);
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+.contact-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.contact-card {
+    background-color: var(--bianco);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(0) saturate(100%) invert(27%) sepia(89%) 
+            saturate(1475%) hue-rotate(187deg) brightness(91%) contrast(101%);
+}
+
+.contact-card:hover .card-icon img {
+    filter: brightness(0) saturate(100%) invert(45%) sepia(82%) 
+            saturate(2151%) hue-rotate(164deg) brightness(97%) contrast(101%);
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.contact-card h2 {
+    color: var(--verdetto);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-card p {
+    color: var(--grigio);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--azzurro_chiaro);
+    color: var(--bianco);
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: var(--blu_scuro);
+    color: var(--bianco);
+}
+
+.faq-section {
+    background-color: var(--bianco);
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.faq-section h2 {
+    color: var(--blu_scuro);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.faq-item {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.faq-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.faq-item h3 {
+    color: var(--verdetto);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    position: relative;
+    padding-right: 30px;
+}
+
+.faq-item h3::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    transition: transform 0.3s ease;
+}
+
+.faq-item h3.active::after {
+    transform: rotate(45deg);
+}
+
+.faq-item p {
+    color: var(--grigio);
+    line-height: 1.6;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+    .contact-cards {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-section {
+        padding: 2rem;
+    }
+
+    .card-icon {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contacts-content {
+        padding: 0 1rem;
+    }
+
+    .contact-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .contacts-content h1 {
+        font-size: 2rem;
+    }
+
+    .faq-section {
+        padding: 1.5rem;
+    }
+}
